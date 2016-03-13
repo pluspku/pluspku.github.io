@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart', 'table']});
+
+    
+function query(callback){
+    var url=$("#datasrc").val() + "/gviz/tq";
+    var q = new google.visualization.Query(url);
+    q.setQuery($("#query").val());
+    q.send(function(resp){
+        var data = JSON.parse(JSON.stringify(resp));
+        callback(JSON.parse(data.G));
+    });
+}
+
+function test(){
+    query(function(resp){
+        var data = new google.visualization.DataTable();
+        resp.cols.forEach(function(c){
+            data.addColumn(c.type, c.label);
+        })
+        data.addRows(resp.rows.map(function(r){return r.c}));
+        var table = new google.visualization.Table(document.getElementById('display'));
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+    });
+}
+    </script>
+  </head>
+
+  <body>
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div"></div>
+    <div>
+        data src <input id="datasrc" value="https://docs.google.com/spreadsheets/d/1PDSm1Mr-BiysExc-GW1aPkyLTHCfsDtiRj_5mDLyQqw" style="width:600px"><br>
+        query <input id="query" value="select *" style="width:600px"><br>
+        <button onclick="test();">submit</button> <a href="visual.html">chart</a>
+    </div>
+    <div id="debug">
+    </div>
+    <div id="display">
+    </div>
+  </body>
+</html>

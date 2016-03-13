@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-  <title>A Demo for Google Spreadsheet Based Database</title>
-
-  <meta name="description" content="A Demo for Google Spreadsheet Based Database">
-  <meta name="author" content="Weijia Shi">
   <meta name="viewport" content="width=1024, user-scalable=no">
 
-  <!-- Core and extension CSS files -->
+  <title>Your deck.js Presentation</title>
+
+  <!-- Required stylesheet -->
   <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
   <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
   <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
   <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
@@ -30,55 +26,29 @@
   <!-- Basic black and white print styles -->
   <link rel="stylesheet" media="print" href="core/print.css">
 
+  <!-- Required Modernizr file -->
   <script src="modernizr.custom.js"></script>
-
-    <script src="jquery.min.js"></script>
 </head>
-
 <body>
   <div class="deck-container">
 
-    <!-- Begin slides -->
-    <section class="slide" id="title-slide">
-      <h1>A Demo for Google Spreadsheet Based Database</h1>
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide">
+      <h1>Slide</h1>
     </section>
 
-    <section class="slide" id="demo">
-        <h2><a href="demo.html">demo</a></h2>
+    <section class="slide">
+      <h1>Content</h1>
     </section>
 
-    <section class="slide" id="database-intro">
-      <h2>Database Types</h2>
-      <ol>
-          <li><h3><a href="https://en.wikipedia.org/wiki/Relational_database">Relational Database</a></h3>
-          <div style="background:url('https://www.mysql.com/common/logos/logo-mysql-170x115.png') no-repeat; background-size:80%; width: 136px; height: 80px"</div>
-          </li>
-          <li><h3><a href="https://en.wikipedia.org/wiki/NoSQL">Non-relational Database</a></h3>
-          Key-value stores, docuemnt stores
-          <div style="background:url('https://www.mongodb.com/assets/MongoDB_Brand_Resources/MongoDB-Logo-5c3a7405a85675366beb3a5ec4c032348c390b3f142f5e6dddf1d78e2df5cb5c.png') no-repeat; background-size:80%; width: 200px; height: 92px"</div>
-          </li>
-
-      </ol>
-        <h2 class="slide" id="extensions-goto">Google Spreadsheet</h2>
-        <ul>
-            <li class="slide" id="extensions-goto">WYSIWYG</li>
-            <li class="slide" id="extensions-goto">Good authentication</li>
-            <li class="slide" id="extensions-goto">FREE!</li>
-        </ul>
-
+    <section class="slide">
+      <h1>Here</h1>
     </section>
 
-    <section class="slide" id="usecase">
-      <h2>Usecase</h2>
-      <ol>
-        <li>Alumni book</li>
-        <li>Progress track</li>
-        <li>Automatic notification</li>
-        <li>&hellip;</li>
-      </ol>
-    </section>
+    <!-- End slides. -->
 
-
+    <!-- Begin extension snippets. Add or remove as needed. -->
 
     <!-- deck.navigation snippet -->
     <div aria-role="navigation">
@@ -100,23 +70,26 @@
       <datalist id="goto-datalist"></datalist>
       <input type="submit" value="Go">
     </form>
+
+    <!-- End extension snippets. -->
   </div>
 
-
-<!-- Deck Core and extensions -->
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
 <script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
 <script src="extensions/menu/deck.menu.js"></script>
 <script src="extensions/goto/deck.goto.js"></script>
 <script src="extensions/status/deck.status.js"></script>
 <script src="extensions/navigation/deck.navigation.js"></script>
 <script src="extensions/scale/deck.scale.js"></script>
 
-<!-- Initialize the deck -->
+<!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
-$(function() {
-  $.deck('.slide');
-});
+  $(function() {
+    $.deck('.slide');
+  });
 </script>
-
 </body>
 </html>
